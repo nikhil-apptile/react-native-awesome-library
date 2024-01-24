@@ -14,6 +14,6 @@ class IconPickerPackage : ReactPackage {
 
     override fun createNativeModules(reactContext: ReactApplicationContext):
             MutableList<NativeModule> {
-        return mutableListOf(IconPickerModule(reactContext))
+        return mutableListOf(IconPickerModule(reactContext), KlaviyoModule(reactContext))
     }
 }
