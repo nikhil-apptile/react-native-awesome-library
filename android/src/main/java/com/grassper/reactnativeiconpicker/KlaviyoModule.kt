@@ -23,10 +23,10 @@ class KlaviyoModule(reactContext: ReactApplicationContext) : ReactContextBaseJav
         Log.d(TAG, "Initializing Klaviyo SDK with apiKey: $apiKey")
 
         // Initialize Klaviyo SDK
-        // Klaviyo.initialize(apiKey, application)
+        Klaviyo.initialize(apiKey, application)
 
         // Register for push notifications
-        // registerForPushNotifications()
+        registerForPushNotifications()
     }
 
     // Register for push notifications
@@ -37,9 +37,9 @@ class KlaviyoModule(reactContext: ReactApplicationContext) : ReactContextBaseJav
         Log.d(TAG, "registering for Push Notifications")
 
         // Fetches the current push token and registers with Push SDK
-        // FirebaseMessaging.getInstance().token.addOnSuccessListener { pushToken ->
-        //     Klaviyo.setPushToken(pushToken)
-        // }
+         FirebaseMessaging.getInstance().token.addOnSuccessListener { pushToken ->
+             Klaviyo.setPushToken(pushToken)
+         }
     }
 
     companion object {
