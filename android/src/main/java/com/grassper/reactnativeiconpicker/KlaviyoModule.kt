@@ -1,6 +1,7 @@
 package com.grassper.reactnativeiconpicker
 
 import android.app.Application
+import android.util.Log
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
@@ -31,12 +32,14 @@ class KlaviyoModule(reactContext: ReactApplicationContext) : ReactContextBaseJav
     // Register for push notifications
     private fun registerForPushNotifications() {
         // Register KlaviyoPushService for receiving push notifications
-        application.registerService(KlaviyoPushService::class.java)
+        // application.registerService(KlaviyoPushService::class.java)
+
+        Log.d(TAG, "registering for Push Notifications")
 
         // Fetches the current push token and registers with Push SDK
-        FirebaseMessaging.getInstance().token.addOnSuccessListener { pushToken ->
-            Klaviyo.setPushToken(pushToken)
-        }
+        // FirebaseMessaging.getInstance().token.addOnSuccessListener { pushToken ->
+        //     Klaviyo.setPushToken(pushToken)
+        // }
     }
 
     companion object {
