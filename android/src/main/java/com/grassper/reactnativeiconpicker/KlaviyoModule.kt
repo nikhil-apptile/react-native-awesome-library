@@ -30,16 +30,27 @@ class KlaviyoModule(reactContext: ReactApplicationContext) : ReactContextBaseJav
     }
 
     // Register for push notifications
-    private fun registerForPushNotifications() {
+    // @ReactMethod
+    fun registerForPushNotifications() {
         // Register KlaviyoPushService for receiving push notifications
         // application.registerService(KlaviyoPushService::class.java)
 
         Log.d(TAG, "registering for Push Notifications")
 
         // Fetches the current push token and registers with Push SDK
-         FirebaseMessaging.getInstance().token.addOnSuccessListener { pushToken ->
-             Klaviyo.setPushToken(pushToken)
-         }
+        FirebaseMessaging.getInstance().token.addOnSuccessListener { pushToken ->
+            Klaviyo.setPushToken(pushToken)
+        }
+    }
+
+    @ReactMethod
+    fun setExternalId(externalId: String) {
+        Klaviyo.setExternalId(externalId)
+    }
+
+    @ReactMethod
+    fun getExternalId(callback: Callback) {
+        callback.invoke(Klaviyo.getExternalId())
     }
 
     companion object {
