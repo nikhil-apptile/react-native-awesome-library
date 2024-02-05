@@ -12,8 +12,9 @@ Pod::Spec.new do |s|
   s.homepage     = package['homepage']
   s.platform     = :ios, "10.0"
 
-  s.source       = { :git => "https://github.com/Grassper/react-native-icon-picker.git", :tag => "v#{s.version}" }
+  s.source       = { :git => "https://github.com/nikhilyadav06/react-native-awesome-library.git", :tag => "v#{s.version}" }
   s.source_files  = "ios/**/*.{h,m,swift}"
 
   s.dependency 'React'
+  s.dependency "KlaviyoSwift", "2.5.1"
 end
