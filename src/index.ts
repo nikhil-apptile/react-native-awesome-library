@@ -1,14 +1,14 @@
-import { NativeModules } from "react-native";
+import { NativeModules, Platform } from 'react-native'
 
-const { KlaviyoModule } = NativeModules;
+const { KlaviyoModule } = NativeModules
 
 export const initializeKlaviyoSDK = (apiKey: string) => {
-  KlaviyoModule.initializeKlaviyoSDK(apiKey);
-};
+  KlaviyoModule.initializeKlaviyoSDK(apiKey)
+}
 
 export const setExternalId = (externalId: string) => {
-  KlaviyoModule.setExternalId(externalId);
-};
+  KlaviyoModule.setExternalId(externalId)
+}
 
 // export const getExternalId = (callback: Function | undefined): String | null => {
 //   return KlaviyoModule.getExternalId(callback);
@@ -24,13 +24,32 @@ export const setExternalId = (externalId: string) => {
 //   }
 // };
 
-export const getExternalId = (callback: (error: any, externalId: string | null) => void): void => {
+export const getExternalId = (
+  callback: (externalId: string | null) => void
+): void => {
   KlaviyoModule.getExternalId((error: any, externalId: string | null) => {
     if (error) {
-      console.error("Error getting external ID:", error);
-      callback(error, null);
+      console.error('Error getting external ID:', error)
+      callback(null)
     } else {
-      callback(null, externalId);
+      callback(externalId)
     }
-  });
-};
+  })
+}
+
+export const setPushToken = (token: string) => {
+  if (Platform.OS === 'ios') {
+    KlaviyoModule.setPushToken(token)
+  }
+}
+
+// export const getExternalId = (callback: (error: any, externalId: string | null) => void): void => {
+//   KlaviyoModule.getExternalId((error: any, externalId: string | null) => {
+//     if (error) {
+//       console.error("Error getting external ID:", error);
+//       callback(error, null);
+//     } else {
+//       callback(null, externalId);
+//     }
+//   });
+// };
