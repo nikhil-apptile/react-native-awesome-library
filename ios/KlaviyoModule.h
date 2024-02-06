@@ -3,3 +3,7 @@
 //
 
 #import <React/RCTBridgeModule.h>
+
+@interface KlaviyoModule : NSObject <RCTBridgeModule>
+
+@end
