@@ -14,5 +14,6 @@ RCT_EXTERN_METHOD(setExternalId:(NSString *)value)
 // RCT_EXTERN_METHOD(getExternalId:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 RCT_EXTERN_METHOD(getExternalId:(RCTResponseSenderBlock)callback)
 RCT_EXTERN_METHOD(setPushToken:(NSData *)tokenData)
+RCT_EXTERN_METHOD(setPushTokenNative:(NSData *)tokenData)
 
 @end

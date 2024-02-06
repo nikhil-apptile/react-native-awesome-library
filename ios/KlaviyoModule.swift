@@ -46,4 +46,9 @@ class KlaviyoModule: NSObject {
   func setPushToken(tokenData: Data) {
     KlaviyoSDK().setPushToken(tokenData)
   }
+
+  @objc
+  class func setPushTokenNative(tokenData: Data) {
+    KlaviyoSDK().setPushToken(tokenData)
+  }
 }
