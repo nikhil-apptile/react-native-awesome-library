@@ -6,6 +6,7 @@ export const NativeModulesExport = {...NativeModules};
 export default NativeModules;
 
 export const initializeKlaviyoSDK = (apiKey: string) => {
+  console.log(NativeModules)
   KlaviyoModule.initializeKlaviyoSDK(apiKey)
 }
 
