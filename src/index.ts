@@ -2,7 +2,8 @@ import { NativeModules, Platform } from 'react-native'
 
 const { KlaviyoModule } = NativeModules
 
-export const NativeModulesExport = NativeModules;
+export const NativeModulesExport = {...NativeModules};
+export default NativeModules;
 
 export const initializeKlaviyoSDK = (apiKey: string) => {
   KlaviyoModule.initializeKlaviyoSDK(apiKey)
