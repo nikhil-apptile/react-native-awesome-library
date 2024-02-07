@@ -55,56 +55,35 @@
 
 
 
-// import Foundation
-// import KlaviyoSwift
-
-// @objc(KlaviyoModule)
-// class KlaviyoModule: NSObject {
-//     @objc
-//     static func initializeKlaviyoSDK(_ apiKey: String) {
-//         KlaviyoSDK.initialize(with: apiKey)
-//     }
-
-//     @objc
-//     static func setExternalId(_ externalId: String) {
-//         KlaviyoSDK.setExternalId(externalId)
-//     }
-
-//     @objc
-//     static func getExternalId(_ callback: @escaping RCTResponseSenderBlock) {
-//         if let externalId = KlaviyoSDK.getExternalId() {
-//             callback([NSNull(), externalId])
-//         } else {
-//             callback(["External ID not found", NSNull()])
-//         }
-//     }
-
-//     @objc
-//     static func setPushToken(_ tokenData: Data) {
-//         KlaviyoSDK.setPushToken(tokenData)
-//     }
-// }
-
 import Foundation
 import KlaviyoSwift
 
 @objc(KlaviyoModule)
 class KlaviyoModule: NSObject {
-    var sdk = KlaviyoSDK();
+    private let sdk = KlaviyoSDK();
+    static let shared = KlaviyoModule();
+
+    private override init() {
+        super.init()
+        // sdk = KlaviyoSDK()
+    }
 
     @objc
     func initializeKlaviyoSDK(_ apiKey: String) {
         sdk.initialize(with: apiKey)
+        // KlaviyoModule.shared.sdk.initialize(with: apiKey);
     }
 
     @objc
     func setExternalId(_ externalId: String) {
         sdk.set(externalId: externalId);
+        // KlaviyoModule.shared.sdk.set(externalId: externalId);
     }
 
     @objc
     func getExternalId(_ callback: @escaping RCTResponseSenderBlock) {
         if let externalId = sdk.externalId {
+        // if let externalId = KlaviyoModule.shared.sdk.externalId {
             callback([NSNull(), externalId])
         } else {
             callback(["External ID not found", NSNull()])
@@ -114,5 +93,7 @@ class KlaviyoModule: NSObject {
     @objc
     func setPushToken(_ tokenData: String) {
         sdk.set(pushToken: tokenData);
+        // KlaviyoModule.shared.sdk.set(pushToken: tokenData);
     }
 }
+// ReactNativeAwesomeLibrary
