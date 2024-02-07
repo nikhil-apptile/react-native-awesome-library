@@ -55,24 +55,56 @@
 
 
 
+// import Foundation
+// import KlaviyoSwift
+
+// @objc(KlaviyoModule)
+// class KlaviyoModule: NSObject {
+//     @objc
+//     static func initializeKlaviyoSDK(_ apiKey: String) {
+//         KlaviyoSDK.initialize(with: apiKey)
+//     }
+
+//     @objc
+//     static func setExternalId(_ externalId: String) {
+//         KlaviyoSDK.setExternalId(externalId)
+//     }
+
+//     @objc
+//     static func getExternalId(_ callback: @escaping RCTResponseSenderBlock) {
+//         if let externalId = KlaviyoSDK.getExternalId() {
+//             callback([NSNull(), externalId])
+//         } else {
+//             callback(["External ID not found", NSNull()])
+//         }
+//     }
+
+//     @objc
+//     static func setPushToken(_ tokenData: Data) {
+//         KlaviyoSDK.setPushToken(tokenData)
+//     }
+// }
+
 import Foundation
 import KlaviyoSwift
 
 @objc(KlaviyoModule)
 class KlaviyoModule: NSObject {
+    var sdk = KlaviyoSDK();
+
     @objc
-    static func initializeKlaviyoSDK(_ apiKey: String) {
-        KlaviyoSDK.initialize(with: apiKey)
+    func initializeKlaviyoSDK(_ apiKey: String) {
+        sdk.initialize(with: apiKey)
     }
 
     @objc
-    static func setExternalId(_ externalId: String) {
-        KlaviyoSDK.setExternalId(externalId)
+    func setExternalId(_ externalId: String) {
+        sdk.set(externalId: externalId);
     }
 
     @objc
-    static func getExternalId(_ callback: @escaping RCTResponseSenderBlock) {
-        if let externalId = KlaviyoSDK.getExternalId() {
+    func getExternalId(_ callback: @escaping RCTResponseSenderBlock) {
+        if let externalId = sdk.externalId {
             callback([NSNull(), externalId])
         } else {
             callback(["External ID not found", NSNull()])
@@ -80,7 +112,7 @@ class KlaviyoModule: NSObject {
     }
 
     @objc
-    static func setPushToken(_ tokenData: Data) {
-        KlaviyoSDK.setPushToken(tokenData)
+    func setPushToken(_ tokenData: String) {
+        sdk.set(pushToken: tokenData);
     }
 }
