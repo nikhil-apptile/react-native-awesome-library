@@ -26,11 +26,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		134814201AA4EA6300B7C361 /* libAwesomeLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAwesomeLibrary.a; path = "/Users/apptilemacbook/sc/apptile/klaviyo-poc/second-library/react-native-awesome-library/ios/build/Debug-iphoneos/libAwesomeLibrary.a"; sourceTree = "<absolute>"; };
 		1442D6CA2B739CEB00C02936 /* KlaviyoModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KlaviyoModule.h; sourceTree = "<group>"; };
 		1442D6CB2B739CEC00C02936 /* KlaviyoModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KlaviyoModule.m; sourceTree = "<group>"; };
 		1442D6CC2B739CEC00C02936 /* KlaviyoModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KlaviyoModule.swift; sourceTree = "<group>"; };
 		1442D6D42B73A13400C02936 /* react-native-awesome-library.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "react-native-awesome-library.podspec"; path = "../react-native-awesome-library.podspec"; sourceTree = "<group>"; };
+		1442D6D62B74D09300C02936 /* libAwesomeLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAwesomeLibrary.a; path = "/Users/apptilemacbook/sc/apptile/klaviyo-poc/second-library/react-native-awesome-library/ios/build/Debug-iphoneos/libAwesomeLibrary.a"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,7 @@
 				1442D6D22B739F6900C02936 /* KlaviyoSwiftExtension */,
 			);
 			productName = RCTDataManager;
-			productReference = 134814201AA4EA6300B7C361 /* libAwesomeLibrary.a */;
+			productReference = 1442D6D62B74D09300C02936 /* libAwesomeLibrary.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -154,6 +154,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -204,6 +205,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

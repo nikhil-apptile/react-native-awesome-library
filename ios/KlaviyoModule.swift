@@ -59,7 +59,7 @@ import Foundation
 import KlaviyoSwift
 
 @objc(KlaviyoModule)
-class KlaviyoModule: NSObject {
+public class KlaviyoModule: NSObject {
     private let sdk = KlaviyoSDK();
     static let shared = KlaviyoModule();
 
