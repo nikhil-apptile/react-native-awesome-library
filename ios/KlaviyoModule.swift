@@ -59,17 +59,18 @@ import Foundation
 import KlaviyoSwift
 
 @objc(KlaviyoModule)
-public class KlaviyoModule: NSObject {
+class KlaviyoModule: NSObject {
     private let sdk = KlaviyoSDK();
     static let shared = KlaviyoModule();
 
-    private override init() {
+    @objc
+    override init() {
         super.init()
         // sdk = KlaviyoSDK()
     }
 
     @objc
-    func initializeKlaviyoSDK(_ apiKey: String) {
+    public func initializeKlaviyoSDK(_ apiKey: String) {
         sdk.initialize(with: apiKey)
         // KlaviyoModule.shared.sdk.initialize(with: apiKey);
     }
@@ -95,5 +96,16 @@ public class KlaviyoModule: NSObject {
         sdk.set(pushToken: tokenData);
         // KlaviyoModule.shared.sdk.set(pushToken: tokenData);
     }
+    
+    func handle(didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) -> Bool {
+        let handled = sdk.handle(notificationResponse: response, withCompletionHandler: completionHandler);
+        return handled;
+    }
 }
 // ReactNativeAwesomeLibrary
+
+extension KlaviyoModule: UNUserNotificationCenterDelegate {
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let handled = KlaviyoModule.shared.handle(didReceive: response, withCompletionHandler: completionHandler);
+    }
+}
