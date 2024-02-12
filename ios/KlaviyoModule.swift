@@ -105,6 +105,12 @@ class KlaviyoModule: NSObject {
 // ReactNativeAwesomeLibrary
 
 extension KlaviyoModule: UNUserNotificationCenterDelegate {
+    
+    @objc
+    public static func requiresMainQueueSetup() -> Bool {
+        return true
+    }
+    
     public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         let handled = KlaviyoModule.shared.handle(didReceive: response, withCompletionHandler: completionHandler);
     }

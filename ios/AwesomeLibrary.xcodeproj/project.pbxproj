@@ -3,14 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1442D6CD2B739CEC00C02936 /* KlaviyoModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1442D6CB2B739CEC00C02936 /* KlaviyoModule.m */; };
 		1442D6CE2B739CEC00C02936 /* KlaviyoModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1442D6CC2B739CEC00C02936 /* KlaviyoModule.swift */; };
-		1442D6D12B739F6900C02936 /* KlaviyoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1442D6D02B739F6900C02936 /* KlaviyoSwift */; };
-		1442D6D32B739F6900C02936 /* KlaviyoSwiftExtension in Frameworks */ = {isa = PBXBuildFile; productRef = 1442D6D22B739F6900C02936 /* KlaviyoSwiftExtension */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,7 +28,7 @@
 		1442D6CB2B739CEC00C02936 /* KlaviyoModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KlaviyoModule.m; sourceTree = "<group>"; };
 		1442D6CC2B739CEC00C02936 /* KlaviyoModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KlaviyoModule.swift; sourceTree = "<group>"; };
 		1442D6D42B73A13400C02936 /* react-native-awesome-library.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "react-native-awesome-library.podspec"; path = "../react-native-awesome-library.podspec"; sourceTree = "<group>"; };
-		1442D6D62B74D09300C02936 /* libAwesomeLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAwesomeLibrary.a; path = "/Users/apptilemacbook/sc/apptile/klaviyo-poc/second-library/react-native-awesome-library/ios/build/Debug-iphoneos/libAwesomeLibrary.a"; sourceTree = "<absolute>"; };
+		146EDFB52B7A532B00AF4DC7 /* libAwesomeLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAwesomeLibrary.a; path = "/Users/apptilemacbook/sc/apptile/klaviyo-poc/second-library/react-native-awesome-library/ios/build/Debug-iphoneos/libAwesomeLibrary.a"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,8 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1442D6D32B739F6900C02936 /* KlaviyoSwiftExtension in Frameworks */,
-				1442D6D12B739F6900C02936 /* KlaviyoSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,11 +69,9 @@
 			);
 			name = AwesomeLibrary;
 			packageProductDependencies = (
-				1442D6D02B739F6900C02936 /* KlaviyoSwift */,
-				1442D6D22B739F6900C02936 /* KlaviyoSwiftExtension */,
 			);
 			productName = RCTDataManager;
-			productReference = 1442D6D62B74D09300C02936 /* libAwesomeLibrary.a */;
+			productReference = 146EDFB52B7A532B00AF4DC7 /* libAwesomeLibrary.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -104,7 +98,6 @@
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
 			packageReferences = (
-				1442D6CF2B739F6900C02936 /* XCRemoteSwiftPackageReference "klaviyo-swift-sdk" */,
 			);
 			productRefGroup = 58B511D21A9E6C8500147676;
 			projectDirPath = "";
@@ -282,30 +275,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		1442D6CF2B739F6900C02936 /* XCRemoteSwiftPackageReference "klaviyo-swift-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/klaviyo/klaviyo-swift-sdk.git";
-			requirement = {
-				kind = exactVersion;
-				version = 2.5.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		1442D6D02B739F6900C02936 /* KlaviyoSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1442D6CF2B739F6900C02936 /* XCRemoteSwiftPackageReference "klaviyo-swift-sdk" */;
-			productName = KlaviyoSwift;
-		};
-		1442D6D22B739F6900C02936 /* KlaviyoSwiftExtension */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1442D6CF2B739F6900C02936 /* XCRemoteSwiftPackageReference "klaviyo-swift-sdk" */;
-			productName = KlaviyoSwiftExtension;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 58B511D31A9E6C8500147676 /* Project object */;
 }
