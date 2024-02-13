@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "13.0"
   s.requires_arc = true
 
-  s.source       = { :git => "https://github.com/nikhilyadav06/react-native-awesome-library.git", :tag => "v#{s.version}" }
+  s.source       = { :git => "https://github.com/nikhil-apptile/react-native-awesome-library.git", :tag => "v#{s.version}" }
   s.source_files  = "ios/**/*.{h,m,swift}"
 
   s.dependency "React-Core"
